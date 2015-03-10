@@ -71,4 +71,8 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:title, :description, :item_type)
     end
+
+    def search
+
+    end 
 end

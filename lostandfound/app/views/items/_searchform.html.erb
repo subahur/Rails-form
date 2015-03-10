@@ -4,6 +4,8 @@
   <%= label_tag(:r, "Search by description:") %>
   <%= text_field_tag(:r) %> </br> </br> 
   <%= label_tag(:s, "Search by type:") %>
-  <%= text_field_tag(:s) %> </br> </br> 
+  <%= select_tag(:tpselect, options_for_select([['book', 1], ['clothing', 2], ['cellphone', 3]])) %>  </br></br> 
   <%= submit_tag("Search") %>
 <% end %>
+
+

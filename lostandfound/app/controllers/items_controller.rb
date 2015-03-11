@@ -12,6 +12,10 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def search
+    @items = Item.search(params[:search])
+  end
+
   # GET /items/new
   def new
     @item = Item.new
@@ -72,7 +76,5 @@ class ItemsController < ApplicationController
       params.require(:item).permit(:title, :description, :item_type)
     end
 
-    def search
-
-    end 
+  
 end

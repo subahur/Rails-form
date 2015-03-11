@@ -1,11 +1,8 @@
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search by title:") %>
-  <%= text_field_tag(:q) %> </br> </br> 
-  <%= label_tag(:r, "Search by description:") %>
-  <%= text_field_tag(:r) %> </br> </br> 
-  <%= label_tag(:s, "Search by type:") %>
-  <%= select_tag(:tpselect, options_for_select([['book', 1], ['clothing', 2], ['cellphone', 3],['watch', 3],['laptop', 3]])) %>  </br></br> 
-  <%= submit_tag("Search") %>
-<% end %>
+<ul>
+    <% @items.each do |item| %>
+  <li><%= link_to item.title, 
+    :action => 'show', :id => item.title  %></li>
+  <% end %>
+</ul>
 
 

@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
 
   def search
     @items = Item.search(params[:search])
+    @types = Type.all
   end
 
   # GET /items/new

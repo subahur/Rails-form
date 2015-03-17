@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :types
+
   resources :items do
     collection do
       post 'search'

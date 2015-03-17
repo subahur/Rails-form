@@ -17,7 +17,8 @@
       <tr>
         <td><%= item.title %></td>
         <td><%= item.description %></td>
-        <td><%= item.item_type %></td>
+        <td><%= item.owner %></td>
+        <td><%= item.type.title %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,11 +28,7 @@
 </table>
 
 
-<%= form_tag(action: "search", method: "post") do %>
-  <%= label_tag(:search, "Search for:") %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("Search") %>
-<% end %>
+
 
 <br>
 

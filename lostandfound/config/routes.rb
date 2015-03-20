@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :items do
     collection do
-      post 'search'
       get 'search'
+      post 'performsearch'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

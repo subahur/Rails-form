@@ -13,10 +13,12 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:search])
     @types = Type.all
   end
 
+  def performsearch
+    @items = Item.search(params[:search], params[:type_id], params[:orand])
+  end
   # GET /items/new
   def new
     @item = Item.new

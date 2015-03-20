@@ -1,0 +1,18 @@
+<h1> Welcome to the search page </h1>
+<div class="col-md-offset-1 col-md-5">
+<%= form_tag(action: "performsearch", method: "get") do %>
+  <%= label_tag("Search for:") %>
+  <%= text_field_tag(:search) %>
+  <% options_array = [ ] %>
+  <% @types.each do |type| %>
+  <% options_array.push([type.title,type.id]) %>
+  <% end %>
+  <%= select_tag(:type_id, options_for_select(options_array)) %>
+
+   <%= select_tag(:orand, 
+   options_for_select(
+   [['AND','AND'],['OR','OR']])) %>
+  <%= submit_tag("Search", class: "btn btn-default") %>
+<% end %>
+
+
